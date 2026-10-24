@@ -1,0 +1,273 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e10]: VITALIA OS
+            - generic [ref=e11]: CLINICAL
+          - paragraph [ref=e12]: Centro Diurno Concepción
+      - generic [ref=e13]:
+        - generic [ref=e14]: Sede Pedro de Valdivia
+        - generic [ref=e16]: SENAMA / MINSAL
+      - navigation [ref=e17]:
+        - button "Dashboard Ejecutivo" [ref=e18] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [active] [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: Padrón de Pacientes
+          - generic [ref=e27]: "5"
+        - button "Asistencia Periódica" [ref=e28] [cursor=pointer]
+        - button "Talleres y Terapias" [ref=e32] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e36] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e42] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]: Vitalia Copilot IA
+          - generic [ref=e53]: LIVE
+    - generic [ref=e54]:
+      - generic [ref=e55]: Vitalia Concepción
+      - generic [ref=e56]: SENAMA / MINSAL
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - generic [ref=e59]:
+        - heading "Padrón de Pacientes & Expedientes Clínicos" [level=1] [ref=e1273]
+        - generic [ref=e61]: "|"
+        - generic [ref=e62]: "Guardado automático: 2:09:35 a. m."
+      - generic [ref=e65]:
+        - button "+ Gasto / Compra Express" [ref=e66] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e69] [cursor=pointer]
+    - main [ref=e72]:
+      - generic [ref=e1274]:
+        - generic [ref=e1275]:
+          - textbox "Buscar por Nombre, RUT o Diagnóstico..." [ref=e1279]
+          - generic [ref=e1280]:
+            - generic [ref=e1281]:
+              - generic [ref=e1282]: "Estado:"
+              - button "Todos (5)" [ref=e1283] [cursor=pointer]
+              - button "Activos" [ref=e1284] [cursor=pointer]
+              - button "Licencia" [ref=e1285] [cursor=pointer]
+            - generic [ref=e1286]:
+              - button "Fichas 360°" [ref=e1287] [cursor=pointer]
+              - button "Ficha Completa" [ref=e1291] [cursor=pointer]
+              - button "Tabla" [ref=e1295] [cursor=pointer]
+            - button "Ingresar Paciente" [ref=e1299] [cursor=pointer]
+        - generic [ref=e1302]:
+          - generic [ref=e1303]:
+            - generic [ref=e1304]:
+              - generic [ref=e1305]:
+                - generic [ref=e1306]:
+                  - generic [ref=e1307]: EM
+                  - generic [ref=e1308]:
+                    - heading "Elena Morales Sanhueza" [level=4] [ref=e1309]
+                    - generic [ref=e1310]:
+                      - generic [ref=e1311]: 5.489.123-4
+                      - generic [ref=e1312]: •
+                      - generic [ref=e1313]: 79 años
+                - generic [ref=e1314]: Activo
+              - generic [ref=e1315]:
+                - generic [ref=e1316]: Jornada Completa
+                - generic [ref=e1317]: FONASA B
+                - generic [ref=e1318]: $420.000/mes
+            - generic [ref=e1319]:
+              - generic [ref=e1320]:
+                - generic [ref=e1321]:
+                  - generic [ref=e1322]: Diagnóstico Base
+                  - generic [ref=e1323]: "MMSE: 23/30 (GDS 3)"
+                - paragraph [ref=e1324]: Deterioro Cognitivo Leve (DCL) amnésico
+              - generic [ref=e1325]:
+                - generic [ref=e1326]:
+                  - generic [ref=e1327]: Movilidad
+                  - text: Autovalente con bastón
+                - generic [ref=e1328]:
+                  - generic [ref=e1329]: Alergias
+                  - text: Penicilina, AINEs
+              - generic [ref=e1330]:
+                - generic [ref=e1331]:
+                  - generic [ref=e1332]: Rodrigo Morales (Hijo)
+                  - text: Apoderado responsable
+                - link "+56 9 8456 1234" [ref=e1333] [cursor=pointer]:
+                  - /url: tel:+56 9 8456 1234
+              - generic [ref=e1336]:
+                - generic [ref=e1337]:
+                  - text: "Asistencia este mes:"
+                  - strong [ref=e1338]: 14 días
+                - generic [ref=e1339]: "Cuota: Pagado"
+            - generic [ref=e1340]:
+              - button "Expediente & Ficha" [ref=e1341] [cursor=pointer]
+              - button "Editar Datos" [ref=e1344] [cursor=pointer]
+              - button "Eliminar Paciente" [ref=e1347] [cursor=pointer]
+          - generic [ref=e1350]:
+            - generic [ref=e1351]:
+              - generic [ref=e1352]:
+                - generic [ref=e1353]:
+                  - generic [ref=e1354]: CR
+                  - generic [ref=e1355]:
+                    - heading "Carlos Ruiz-Tagle Vial" [level=4] [ref=e1356]
+                    - generic [ref=e1357]:
+                      - generic [ref=e1358]: 4.821.902-8
+                      - generic [ref=e1359]: •
+                      - generic [ref=e1360]: 83 años
+                - generic [ref=e1361]: Activo
+              - generic [ref=e1362]:
+                - generic [ref=e1363]: Media Jornada (Mañana)
+                - generic [ref=e1364]: ISAPRE Colmena
+                - generic [ref=e1365]: $290.000/mes
+            - generic [ref=e1366]:
+              - generic [ref=e1367]:
+                - generic [ref=e1368]:
+                  - generic [ref=e1369]: Diagnóstico Base
+                  - generic [ref=e1370]: "MMSE: 19/30 (GDS 4)"
+                - paragraph [ref=e1371]: Enfermedad de Alzheimer Inicial / GDS 4
+              - generic [ref=e1372]:
+                - generic [ref=e1373]:
+                  - generic [ref=e1374]: Movilidad
+                  - text: Asistencia leve para marcha
+                - generic [ref=e1375]:
+                  - generic [ref=e1376]: Alergias
+                  - text: Sin alergias conocidas
+              - generic [ref=e1377]:
+                - generic [ref=e1378]:
+                  - generic [ref=e1379]: Marcela Ruiz-Tagle (Hija)
+                  - text: Apoderado responsable
+                - link "+56 9 9123 7890" [ref=e1380] [cursor=pointer]:
+                  - /url: tel:+56 9 9123 7890
+              - generic [ref=e1383]:
+                - generic [ref=e1384]:
+                  - text: "Asistencia este mes:"
+                  - strong [ref=e1385]: 9 días
+                - generic [ref=e1386]: "Cuota: Pagado"
+            - generic [ref=e1387]:
+              - button "Expediente & Ficha" [ref=e1388] [cursor=pointer]
+              - button "Editar Datos" [ref=e1391] [cursor=pointer]
+              - button "Eliminar Paciente" [ref=e1394] [cursor=pointer]
+          - generic [ref=e1397]:
+            - generic [ref=e1398]:
+              - generic [ref=e1399]:
+                - generic [ref=e1400]:
+                  - generic [ref=e1401]: MT
+                  - generic [ref=e1402]:
+                    - heading "Margarita Troncoso Benítez" [level=4] [ref=e1403]
+                    - generic [ref=e1404]:
+                      - generic [ref=e1405]: 6.102.455-K
+                      - generic [ref=e1406]: •
+                      - generic [ref=e1407]: 76 años
+                - generic [ref=e1408]: Activo
+              - generic [ref=e1409]:
+                - generic [ref=e1410]: Jornada Completa
+                - generic [ref=e1411]: FONASA C
+                - generic [ref=e1412]: $420.000/mes
+            - generic [ref=e1413]:
+              - generic [ref=e1414]:
+                - generic [ref=e1415]:
+                  - generic [ref=e1416]: Diagnóstico Base
+                  - generic [ref=e1417]: "MMSE: 27/30 (GDS 2)"
+                - paragraph [ref=e1418]: Secuela ACV isquémico (Hemiparesia derecha leve) & Artrosis
+              - generic [ref=e1419]:
+                - generic [ref=e1420]:
+                  - generic [ref=e1421]: Movilidad
+                  - text: Autovalente con supervisión
+                - generic [ref=e1422]:
+                  - generic [ref=e1423]: Alergias
+                  - text: Sulfas
+              - generic [ref=e1424]:
+                - generic [ref=e1425]:
+                  - generic [ref=e1426]: Juan Pablo Vera (Esposo)
+                  - text: Apoderado responsable
+                - link "+56 9 7654 3210" [ref=e1427] [cursor=pointer]:
+                  - /url: tel:+56 9 7654 3210
+              - generic [ref=e1430]:
+                - generic [ref=e1431]:
+                  - text: "Asistencia este mes:"
+                  - strong [ref=e1432]: 14 días
+                - generic [ref=e1433]: "Cuota: Pendiente"
+            - generic [ref=e1434]:
+              - button "Expediente & Ficha" [ref=e1435] [cursor=pointer]
+              - button "Editar Datos" [ref=e1438] [cursor=pointer]
+              - button "Eliminar Paciente" [ref=e1441] [cursor=pointer]
+          - generic [ref=e1444]:
+            - generic [ref=e1445]:
+              - generic [ref=e1446]:
+                - generic [ref=e1447]:
+                  - generic [ref=e1448]: HC
+                  - generic [ref=e1449]:
+                    - heading "Hernán Carrasco Sepúlveda" [level=4] [ref=e1450]
+                    - generic [ref=e1451]:
+                      - generic [ref=e1452]: 5.981.234-1
+                      - generic [ref=e1453]: •
+                      - generic [ref=e1454]: 81 años
+                - generic [ref=e1455]: Activo
+              - generic [ref=e1456]:
+                - generic [ref=e1457]: Personalizado (3 días)
+                - generic [ref=e1458]: FONASA D
+                - generic [ref=e1459]: $310.000/mes
+            - generic [ref=e1460]:
+              - generic [ref=e1461]:
+                - generic [ref=e1462]:
+                  - generic [ref=e1463]: Diagnóstico Base
+                  - generic [ref=e1464]: "MMSE: 25/30 (GDS 3)"
+                - paragraph [ref=e1465]: Parkinson inicial, Temblor en reposo mano derecha
+              - generic [ref=e1466]:
+                - generic [ref=e1467]:
+                  - generic [ref=e1468]: Movilidad
+                  - text: Marcha parkinsoniana con andador
+                - generic [ref=e1469]:
+                  - generic [ref=e1470]: Alergias
+                  - text: Sin alergias
+              - generic [ref=e1471]:
+                - generic [ref=e1472]:
+                  - generic [ref=e1473]: Cecilia Carrasco (Hija)
+                  - text: Apoderado responsable
+                - link "+56 9 6543 2109" [ref=e1474] [cursor=pointer]:
+                  - /url: tel:+56 9 6543 2109
+              - generic [ref=e1477]:
+                - generic [ref=e1478]:
+                  - text: "Asistencia este mes:"
+                  - strong [ref=e1479]: 5 días
+                - generic [ref=e1480]: "Cuota: Pagado"
+            - generic [ref=e1481]:
+              - button "Expediente & Ficha" [ref=e1482] [cursor=pointer]
+              - button "Editar Datos" [ref=e1485] [cursor=pointer]
+              - button "Eliminar Paciente" [ref=e1488] [cursor=pointer]
+          - generic [ref=e1491]:
+            - generic [ref=e1492]:
+              - generic [ref=e1493]:
+                - generic [ref=e1494]:
+                  - generic [ref=e1495]: SU
+                  - generic [ref=e1496]:
+                    - heading "Sylvia Urrutia Matthei" [level=4] [ref=e1497]
+                    - generic [ref=e1498]:
+                      - generic [ref=e1499]: 5.201.890-3
+                      - generic [ref=e1500]: •
+                      - generic [ref=e1501]: 85 años
+                - generic [ref=e1502]: Activo
+              - generic [ref=e1503]:
+                - generic [ref=e1504]: Jornada Completa
+                - generic [ref=e1505]: ISAPRE Banmédica
+                - generic [ref=e1506]: $420.000/mes
+            - generic [ref=e1507]:
+              - generic [ref=e1508]:
+                - generic [ref=e1509]:
+                  - generic [ref=e1510]: Diagnóstico Base
+                  - generic [ref=e1511]: "MMSE: 28/30 (GDS 2)"
+                - paragraph [ref=e1512]: Depresión del adulto mayor & Aislamiento social
+              - generic [ref=e1513]:
+                - generic [ref=e1514]:
+                  - generic [ref=e1515]: Movilidad
+                  - text: Completamente autovalente
+                - generic [ref=e1516]:
+                  - generic [ref=e1517]: Alergias
+                  - text: Lactosa
+              - generic [ref=e1518]:
+                - generic [ref=e1519]:
+                  - generic [ref=e1520]: Gonzalo Silva U. (Hijo)
+                  - text: Apoderado responsable
+                - link "+56 9 5432 1098" [ref=e1521] [cursor=pointer]:
+                  - /url: tel:+56 9 5432 1098
+              - generic [ref=e1524]:
+                - generic [ref=e1525]:
+                  - text: "Asistencia este mes:"
+                  - strong [ref=e1526]: 15 días
+                - generic [ref=e1527]: "Cuota: Pendiente"
+            - generic [ref=e1528]:
+              - button "Expediente & Ficha" [ref=e1529] [cursor=pointer]
+              - button "Editar Datos" [ref=e1532] [cursor=pointer]
+              - button "Eliminar Paciente" [ref=e1535] [cursor=pointer]

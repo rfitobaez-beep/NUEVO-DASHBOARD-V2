@@ -1,0 +1,461 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e10]: VITALIA OS
+            - generic [ref=e11]: CLINICAL
+          - paragraph [ref=e12]: Centro Diurno Concepción
+      - generic [ref=e13]:
+        - generic [ref=e14]: Sede Pedro de Valdivia
+        - generic [ref=e16]: SENAMA / MINSAL
+      - navigation [ref=e17]:
+        - button "Dashboard Ejecutivo" [ref=e18] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: Padrón de Pacientes
+          - generic [ref=e27]: "5"
+        - button "Asistencia Periódica" [active] [ref=e28] [cursor=pointer]
+        - button "Talleres y Terapias" [ref=e32] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e36] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e42] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]: Vitalia Copilot IA
+          - generic [ref=e53]: LIVE
+    - generic [ref=e54]:
+      - generic [ref=e55]: Vitalia Concepción
+      - generic [ref=e56]: SENAMA / MINSAL
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - generic [ref=e59]:
+        - heading "Asistencia Periódica & Matriz Mensual" [level=1] [ref=e522]
+        - generic [ref=e61]: "|"
+        - generic [ref=e62]: "Guardado automático: 2:09:05 a. m."
+      - generic [ref=e65]:
+        - button "+ Gasto / Compra Express" [ref=e66] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e69] [cursor=pointer]
+    - main [ref=e72]:
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - generic [ref=e525]:
+            - button "Calendario Mensual (Todos)" [ref=e526] [cursor=pointer]
+            - button "Calendario por Paciente" [ref=e529] [cursor=pointer]
+            - button "Planilla Diaria (1-Clic)" [ref=e532] [cursor=pointer]
+          - generic [ref=e535]:
+            - generic [ref=e536]: "Mes Calendario:"
+            - generic [ref=e537]:
+              - button "Mes Anterior" [ref=e538] [cursor=pointer]
+              - textbox [ref=e541]: 2026-10
+              - button "Mes Siguiente" [ref=e542] [cursor=pointer]
+        - generic [ref=e546]:
+          - generic [ref=e547]:
+            - generic [ref=e548]:
+              - 'heading "Matriz de Asistencia del Mes: 2026-10" [level=3] [ref=e549]'
+              - paragraph [ref=e550]: Visualiza de un vistazo la asistencia de cada persona y haz clic en cualquier día para cambiar su estado
+            - generic [ref=e551]:
+              - generic [ref=e552]: ✓ Presente
+              - generic [ref=e554]: ✕ Ausente
+              - generic [ref=e556]: L Licencia
+              - generic [ref=e558]: • Sin registro
+          - table [ref=e560]:
+            - rowgroup [ref=e561]:
+              - row [ref=e562]:
+                - columnheader "Paciente" [ref=e563]
+                - columnheader "Asistencias Mes" [ref=e564]
+                - columnheader "Ausencias" [ref=e565]
+                - columnheader "% Asist." [ref=e566]
+                - columnheader "1 J" [ref=e567]:
+                  - generic [ref=e568]: "1"
+                  - generic [ref=e569]: J
+                - columnheader "2 V" [ref=e570]:
+                  - generic [ref=e571]: "2"
+                  - generic [ref=e572]: V
+                - columnheader "3 S" [ref=e573]:
+                  - generic [ref=e574]: "3"
+                  - generic [ref=e575]: S
+                - columnheader "4 D" [ref=e576]:
+                  - generic [ref=e577]: "4"
+                  - generic [ref=e578]: D
+                - columnheader "5 L" [ref=e579]:
+                  - generic [ref=e580]: "5"
+                  - generic [ref=e581]: L
+                - columnheader "6 M" [ref=e582]:
+                  - generic [ref=e583]: "6"
+                  - generic [ref=e584]: M
+                - columnheader "7 X" [ref=e585]:
+                  - generic [ref=e586]: "7"
+                  - generic [ref=e587]: X
+                - columnheader "8 J" [ref=e588]:
+                  - generic [ref=e589]: "8"
+                  - generic [ref=e590]: J
+                - columnheader "9 V" [ref=e591]:
+                  - generic [ref=e592]: "9"
+                  - generic [ref=e593]: V
+                - columnheader "10 S" [ref=e594]:
+                  - generic [ref=e595]: "10"
+                  - generic [ref=e596]: S
+                - columnheader "11 D" [ref=e597]:
+                  - generic [ref=e598]: "11"
+                  - generic [ref=e599]: D
+                - columnheader "12 L" [ref=e600]:
+                  - generic [ref=e601]: "12"
+                  - generic [ref=e602]: L
+                - columnheader "13 M" [ref=e603]:
+                  - generic [ref=e604]: "13"
+                  - generic [ref=e605]: M
+                - columnheader "14 X" [ref=e606]:
+                  - generic [ref=e607]: "14"
+                  - generic [ref=e608]: X
+                - columnheader "15 J" [ref=e609]:
+                  - generic [ref=e610]: "15"
+                  - generic [ref=e611]: J
+                - columnheader "16 V" [ref=e612]:
+                  - generic [ref=e613]: "16"
+                  - generic [ref=e614]: V
+                - columnheader "17 S" [ref=e615]:
+                  - generic [ref=e616]: "17"
+                  - generic [ref=e617]: S
+                - columnheader "18 D" [ref=e618]:
+                  - generic [ref=e619]: "18"
+                  - generic [ref=e620]: D
+                - columnheader "19 L" [ref=e621]:
+                  - generic [ref=e622]: "19"
+                  - generic [ref=e623]: L
+                - columnheader "20 M" [ref=e624]:
+                  - generic [ref=e625]: "20"
+                  - generic [ref=e626]: M
+                - columnheader "21 X" [ref=e627]:
+                  - generic [ref=e628]: "21"
+                  - generic [ref=e629]: X
+                - columnheader "22 J" [ref=e630]:
+                  - generic [ref=e631]: "22"
+                  - generic [ref=e632]: J
+                - columnheader "23 V" [ref=e633]:
+                  - generic [ref=e634]: "23"
+                  - generic [ref=e635]: V
+                - columnheader "24 S" [ref=e636]:
+                  - generic [ref=e637]: "24"
+                  - generic [ref=e638]: S
+                - columnheader "25 D" [ref=e639]:
+                  - generic [ref=e640]: "25"
+                  - generic [ref=e641]: D
+                - columnheader "26 L" [ref=e642]:
+                  - generic [ref=e643]: "26"
+                  - generic [ref=e644]: L
+                - columnheader "27 M" [ref=e645]:
+                  - generic [ref=e646]: "27"
+                  - generic [ref=e647]: M
+                - columnheader "28 X" [ref=e648]:
+                  - generic [ref=e649]: "28"
+                  - generic [ref=e650]: X
+                - columnheader "29 J" [ref=e651]:
+                  - generic [ref=e652]: "29"
+                  - generic [ref=e653]: J
+                - columnheader "30 V" [ref=e654]:
+                  - generic [ref=e655]: "30"
+                  - generic [ref=e656]: V
+                - columnheader "31 S" [ref=e657]:
+                  - generic [ref=e658]: "31"
+                  - generic [ref=e659]: S
+            - rowgroup [ref=e660]:
+              - row [ref=e661]:
+                - cell [ref=e662]:
+                  - button "Elena Morales Sanhueza" [ref=e663] [cursor=pointer]
+                  - text: 5.489.123-4 • Jornada Completa
+                - cell "14 veces" [ref=e664]
+                - cell "1" [ref=e665]
+                - cell "64%" [ref=e666]
+                - cell [ref=e667]:
+                  - button "✓" [ref=e668] [cursor=pointer]
+                - cell [ref=e669]:
+                  - button "✓" [ref=e670] [cursor=pointer]
+                - cell "-" [ref=e671]
+                - cell "-" [ref=e672]
+                - cell [ref=e673]:
+                  - button "✓" [ref=e674] [cursor=pointer]
+                - cell [ref=e675]:
+                  - button "✓" [ref=e676] [cursor=pointer]
+                - cell [ref=e677]:
+                  - button "✓" [ref=e678] [cursor=pointer]
+                - cell [ref=e679]:
+                  - button "✓" [ref=e680] [cursor=pointer]
+                - cell [ref=e681]:
+                  - button "✓" [ref=e682] [cursor=pointer]
+                - cell "-" [ref=e683]
+                - cell "-" [ref=e684]
+                - cell [ref=e685]:
+                  - button "✕" [ref=e686] [cursor=pointer]
+                - cell [ref=e687]:
+                  - button "✓" [ref=e688] [cursor=pointer]
+                - cell [ref=e689]:
+                  - button "✓" [ref=e690] [cursor=pointer]
+                - cell [ref=e691]:
+                  - button "✓" [ref=e692] [cursor=pointer]
+                - cell [ref=e693]:
+                  - button "✓" [ref=e694] [cursor=pointer]
+                - cell "-" [ref=e695]
+                - cell "-" [ref=e696]
+                - cell [ref=e697]:
+                  - button "✓" [ref=e698] [cursor=pointer]
+                - cell [ref=e699]:
+                  - button "✓" [ref=e700] [cursor=pointer]
+                - cell [ref=e701]:
+                  - button "✓" [ref=e702] [cursor=pointer]
+                - cell [ref=e703]:
+                  - button "•" [ref=e704] [cursor=pointer]
+                - cell [ref=e705]:
+                  - button "•" [ref=e706] [cursor=pointer]
+                - cell "-" [ref=e707]
+                - cell "-" [ref=e708]
+                - cell [ref=e709]:
+                  - button "•" [ref=e710] [cursor=pointer]
+                - cell [ref=e711]:
+                  - button "•" [ref=e712] [cursor=pointer]
+                - cell [ref=e713]:
+                  - button "•" [ref=e714] [cursor=pointer]
+                - cell [ref=e715]:
+                  - button "•" [ref=e716] [cursor=pointer]
+                - cell [ref=e717]:
+                  - button "•" [ref=e718] [cursor=pointer]
+                - cell "-" [ref=e719]
+              - row [ref=e720]:
+                - cell [ref=e721]:
+                  - button "Carlos Ruiz-Tagle Vial" [ref=e722] [cursor=pointer]
+                  - text: 4.821.902-8 • Media Jornada (Mañana)
+                - cell "9 veces" [ref=e723]
+                - cell "0" [ref=e724]
+                - cell "41%" [ref=e725]
+                - cell [ref=e726]:
+                  - button "•" [ref=e727] [cursor=pointer]
+                - cell [ref=e728]:
+                  - button "✓" [ref=e729] [cursor=pointer]
+                - cell "-" [ref=e730]
+                - cell "-" [ref=e731]
+                - cell [ref=e732]:
+                  - button "✓" [ref=e733] [cursor=pointer]
+                - cell [ref=e734]:
+                  - button "•" [ref=e735] [cursor=pointer]
+                - cell [ref=e736]:
+                  - button "✓" [ref=e737] [cursor=pointer]
+                - cell [ref=e738]:
+                  - button "•" [ref=e739] [cursor=pointer]
+                - cell [ref=e740]:
+                  - button "✓" [ref=e741] [cursor=pointer]
+                - cell "-" [ref=e742]
+                - cell "-" [ref=e743]
+                - cell [ref=e744]:
+                  - button "✓" [ref=e745] [cursor=pointer]
+                - cell [ref=e746]:
+                  - button "•" [ref=e747] [cursor=pointer]
+                - cell [ref=e748]:
+                  - button "✓" [ref=e749] [cursor=pointer]
+                - cell [ref=e750]:
+                  - button "•" [ref=e751] [cursor=pointer]
+                - cell [ref=e752]:
+                  - button "✓" [ref=e753] [cursor=pointer]
+                - cell "-" [ref=e754]
+                - cell "-" [ref=e755]
+                - cell [ref=e756]:
+                  - button "✓" [ref=e757] [cursor=pointer]
+                - cell [ref=e758]:
+                  - button "•" [ref=e759] [cursor=pointer]
+                - cell [ref=e760]:
+                  - button "✓" [ref=e761] [cursor=pointer]
+                - cell [ref=e762]:
+                  - button "•" [ref=e763] [cursor=pointer]
+                - cell [ref=e764]:
+                  - button "•" [ref=e765] [cursor=pointer]
+                - cell "-" [ref=e766]
+                - cell "-" [ref=e767]
+                - cell [ref=e768]:
+                  - button "•" [ref=e769] [cursor=pointer]
+                - cell [ref=e770]:
+                  - button "•" [ref=e771] [cursor=pointer]
+                - cell [ref=e772]:
+                  - button "•" [ref=e773] [cursor=pointer]
+                - cell [ref=e774]:
+                  - button "•" [ref=e775] [cursor=pointer]
+                - cell [ref=e776]:
+                  - button "•" [ref=e777] [cursor=pointer]
+                - cell "-" [ref=e778]
+              - row [ref=e779]:
+                - cell [ref=e780]:
+                  - button "Margarita Troncoso Benítez" [ref=e781] [cursor=pointer]
+                  - text: 6.102.455-K • Jornada Completa
+                - cell "14 veces" [ref=e782]
+                - cell "0" [ref=e783]
+                - cell "64%" [ref=e784]
+                - cell [ref=e785]:
+                  - button "✓" [ref=e786] [cursor=pointer]
+                - cell [ref=e787]:
+                  - button "✓" [ref=e788] [cursor=pointer]
+                - cell "-" [ref=e789]
+                - cell "-" [ref=e790]
+                - cell [ref=e791]:
+                  - button "✓" [ref=e792] [cursor=pointer]
+                - cell [ref=e793]:
+                  - button "✓" [ref=e794] [cursor=pointer]
+                - cell [ref=e795]:
+                  - button "✓" [ref=e796] [cursor=pointer]
+                - cell [ref=e797]:
+                  - button "✓" [ref=e798] [cursor=pointer]
+                - cell [ref=e799]:
+                  - button "L" [ref=e800] [cursor=pointer]
+                - cell "-" [ref=e801]
+                - cell "-" [ref=e802]
+                - cell [ref=e803]:
+                  - button "✓" [ref=e804] [cursor=pointer]
+                - cell [ref=e805]:
+                  - button "✓" [ref=e806] [cursor=pointer]
+                - cell [ref=e807]:
+                  - button "✓" [ref=e808] [cursor=pointer]
+                - cell [ref=e809]:
+                  - button "✓" [ref=e810] [cursor=pointer]
+                - cell [ref=e811]:
+                  - button "✓" [ref=e812] [cursor=pointer]
+                - cell "-" [ref=e813]
+                - cell "-" [ref=e814]
+                - cell [ref=e815]:
+                  - button "✓" [ref=e816] [cursor=pointer]
+                - cell [ref=e817]:
+                  - button "✓" [ref=e818] [cursor=pointer]
+                - cell [ref=e819]:
+                  - button "✓" [ref=e820] [cursor=pointer]
+                - cell [ref=e821]:
+                  - button "•" [ref=e822] [cursor=pointer]
+                - cell [ref=e823]:
+                  - button "•" [ref=e824] [cursor=pointer]
+                - cell "-" [ref=e825]
+                - cell "-" [ref=e826]
+                - cell [ref=e827]:
+                  - button "•" [ref=e828] [cursor=pointer]
+                - cell [ref=e829]:
+                  - button "•" [ref=e830] [cursor=pointer]
+                - cell [ref=e831]:
+                  - button "•" [ref=e832] [cursor=pointer]
+                - cell [ref=e833]:
+                  - button "•" [ref=e834] [cursor=pointer]
+                - cell [ref=e835]:
+                  - button "•" [ref=e836] [cursor=pointer]
+                - cell "-" [ref=e837]
+              - row [ref=e838]:
+                - cell [ref=e839]:
+                  - button "Hernán Carrasco Sepúlveda" [ref=e840] [cursor=pointer]
+                  - text: 5.981.234-1 • Personalizado (3 días)
+                - cell "5 veces" [ref=e841]
+                - cell "1" [ref=e842]
+                - cell "23%" [ref=e843]
+                - cell [ref=e844]:
+                  - button "✓" [ref=e845] [cursor=pointer]
+                - cell [ref=e846]:
+                  - button "•" [ref=e847] [cursor=pointer]
+                - cell "-" [ref=e848]
+                - cell "-" [ref=e849]
+                - cell [ref=e850]:
+                  - button "•" [ref=e851] [cursor=pointer]
+                - cell [ref=e852]:
+                  - button "✓" [ref=e853] [cursor=pointer]
+                - cell [ref=e854]:
+                  - button "•" [ref=e855] [cursor=pointer]
+                - cell [ref=e856]:
+                  - button "✕" [ref=e857] [cursor=pointer]
+                - cell [ref=e858]:
+                  - button "•" [ref=e859] [cursor=pointer]
+                - cell "-" [ref=e860]
+                - cell "-" [ref=e861]
+                - cell [ref=e862]:
+                  - button "•" [ref=e863] [cursor=pointer]
+                - cell [ref=e864]:
+                  - button "✓" [ref=e865] [cursor=pointer]
+                - cell [ref=e866]:
+                  - button "•" [ref=e867] [cursor=pointer]
+                - cell [ref=e868]:
+                  - button "✓" [ref=e869] [cursor=pointer]
+                - cell [ref=e870]:
+                  - button "•" [ref=e871] [cursor=pointer]
+                - cell "-" [ref=e872]
+                - cell "-" [ref=e873]
+                - cell [ref=e874]:
+                  - button "•" [ref=e875] [cursor=pointer]
+                - cell [ref=e876]:
+                  - button "✓" [ref=e877] [cursor=pointer]
+                - cell [ref=e878]:
+                  - button "•" [ref=e879] [cursor=pointer]
+                - cell [ref=e880]:
+                  - button "•" [ref=e881] [cursor=pointer]
+                - cell [ref=e882]:
+                  - button "•" [ref=e883] [cursor=pointer]
+                - cell "-" [ref=e884]
+                - cell "-" [ref=e885]
+                - cell [ref=e886]:
+                  - button "•" [ref=e887] [cursor=pointer]
+                - cell [ref=e888]:
+                  - button "•" [ref=e889] [cursor=pointer]
+                - cell [ref=e890]:
+                  - button "•" [ref=e891] [cursor=pointer]
+                - cell [ref=e892]:
+                  - button "•" [ref=e893] [cursor=pointer]
+                - cell [ref=e894]:
+                  - button "•" [ref=e895] [cursor=pointer]
+                - cell "-" [ref=e896]
+              - row [ref=e897]:
+                - cell [ref=e898]:
+                  - button "Sylvia Urrutia Matthei" [ref=e899] [cursor=pointer]
+                  - text: 5.201.890-3 • Jornada Completa
+                - cell "15 veces" [ref=e900]
+                - cell "0" [ref=e901]
+                - cell "68%" [ref=e902]
+                - cell [ref=e903]:
+                  - button "✓" [ref=e904] [cursor=pointer]
+                - cell [ref=e905]:
+                  - button "✓" [ref=e906] [cursor=pointer]
+                - cell "-" [ref=e907]
+                - cell "-" [ref=e908]
+                - cell [ref=e909]:
+                  - button "✓" [ref=e910] [cursor=pointer]
+                - cell [ref=e911]:
+                  - button "✓" [ref=e912] [cursor=pointer]
+                - cell [ref=e913]:
+                  - button "✓" [ref=e914] [cursor=pointer]
+                - cell [ref=e915]:
+                  - button "✓" [ref=e916] [cursor=pointer]
+                - cell [ref=e917]:
+                  - button "✓" [ref=e918] [cursor=pointer]
+                - cell "-" [ref=e919]
+                - cell "-" [ref=e920]
+                - cell [ref=e921]:
+                  - button "✓" [ref=e922] [cursor=pointer]
+                - cell [ref=e923]:
+                  - button "✓" [ref=e924] [cursor=pointer]
+                - cell [ref=e925]:
+                  - button "✓" [ref=e926] [cursor=pointer]
+                - cell [ref=e927]:
+                  - button "✓" [ref=e928] [cursor=pointer]
+                - cell [ref=e929]:
+                  - button "✓" [ref=e930] [cursor=pointer]
+                - cell "-" [ref=e931]
+                - cell "-" [ref=e932]
+                - cell [ref=e933]:
+                  - button "✓" [ref=e934] [cursor=pointer]
+                - cell [ref=e935]:
+                  - button "✓" [ref=e936] [cursor=pointer]
+                - cell [ref=e937]:
+                  - button "✓" [ref=e938] [cursor=pointer]
+                - cell [ref=e939]:
+                  - button "•" [ref=e940] [cursor=pointer]
+                - cell [ref=e941]:
+                  - button "•" [ref=e942] [cursor=pointer]
+                - cell "-" [ref=e943]
+                - cell "-" [ref=e944]
+                - cell [ref=e945]:
+                  - button "•" [ref=e946] [cursor=pointer]
+                - cell [ref=e947]:
+                  - button "•" [ref=e948] [cursor=pointer]
+                - cell [ref=e949]:
+                  - button "•" [ref=e950] [cursor=pointer]
+                - cell [ref=e951]:
+                  - button "•" [ref=e952] [cursor=pointer]
+                - cell [ref=e953]:
+                  - button "•" [ref=e954] [cursor=pointer]
+                - cell "-" [ref=e955]

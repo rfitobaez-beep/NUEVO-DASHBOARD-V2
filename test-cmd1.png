@@ -1,0 +1,58 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: VITALIA OS
+          - paragraph [ref=e11]: Centro Diurno Concepción
+      - navigation [ref=e12]:
+        - button "Dashboard Ejecutivo" [ref=e13] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [ref=e17] [cursor=pointer]:
+          - generic [ref=e18]: Padrón de Pacientes
+          - generic [ref=e22]: "5"
+        - button "Asistencia Periódica" [ref=e23] [cursor=pointer]
+        - button "Talleres y Terapias" [ref=e27] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e31] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e37] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]: Vitalia Copilot IA
+          - generic [ref=e48]: LIVE
+    - generic [ref=e49]:
+      - generic [ref=e50]: Vitalia Concepción
+      - generic [ref=e51]: SENAMA / MINSAL
+  - generic [ref=e52]:
+    - banner [ref=e53]:
+      - generic [ref=e54]:
+        - heading "Vitalia Copilot IA (Control por Comandos)" [level=1] [ref=e205]
+        - generic [ref=e56]: "|"
+        - generic [ref=e57]: "Guardado automático: 2:19:19 a. m."
+      - generic [ref=e60]:
+        - button "+ Gasto / Compra Express" [ref=e61] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e64] [cursor=pointer]
+    - main [ref=e67]:
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - generic [ref=e240]:
+            - heading "Vitalia Copilot IA" [level=3] [ref=e241]
+            - paragraph [ref=e242]: Intérprete Ejecutivo de Comandos & Consultas sobre Base de Datos Local
+          - button "Limpiar Chat" [ref=e243] [cursor=pointer]
+        - generic [ref=e244]:
+          - generic [ref=e245]: "Comandos sugeridos:"
+          - button "✓ Presentes a todos" [ref=e246] [cursor=pointer]
+          - button "Pon presente a Elena" [ref=e247] [cursor=pointer]
+          - button "+ Gasto $28.000 aseo" [ref=e248] [cursor=pointer]
+          - button "+ Ingreso cuota Margarita" [ref=e249] [cursor=pointer]
+          - button "¿Quiénes faltaron hoy?" [ref=e250] [cursor=pointer]
+          - button "Resumen financiero" [ref=e251] [cursor=pointer]
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - generic [ref=e254]: V
+            - generic [ref=e255]: "¡Hola! Soy Vitalia Copilot. Estoy conectado en tiempo real al ERP Clínico-Financiero de Centro Vitalia Concepción. Puedo responder dudas y ejecutar órdenes directas en el sistema, por ejemplo: • \"Pon presente a Elena Morales hoy\" • \"Marca pagada la cuota de Margarita Troncoso\" • \"Registra un gasto variable de $18.500 en Farmacia gasas y apósitos\" • \"Agrega al paciente Pedro Gómez, RUT 6.234.567-8, arancel $380.000\" ¿En qué te ayudo ahora?"
+          - generic [ref=e256]: pon presente a todos los usuarios
+          - generic [ref=e258]:
+            - generic [ref=e259]: V
+            - generic [ref=e260]: "✓ ASISTENCIA COMPLETA REGISTRADA: He marcado como PRESENTES a todos los usuarios de la cohorte (5 personas) para hoy 2026-10-21 con horario de check-in a las 08:45 hrs: • Elena Morales Sanhueza (Jornada Completa) • Carlos Ruiz-Tagle Vial (Media Jornada (Mañana)) • Margarita Troncoso Benítez (Jornada Completa) • Hernán Carrasco Sepúlveda (Personalizado (3 días)) • Sylvia Urrutia Matthei (Jornada Completa) Los indicadores del Dashboard y el Calendario Mensual se actualizaron inmediatamente."
+        - generic [ref=e261]:
+          - 'textbox "Escribe con tus propias palabras (ej: ''pon presente a todos'', ''agrega gasto 30000 café'', ''agrega ingreso cuota Carlos'')..." [ref=e262]'
+          - button "Ejecutar" [ref=e263] [cursor=pointer]

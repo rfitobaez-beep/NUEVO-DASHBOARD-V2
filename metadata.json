@@ -1,0 +1,6 @@
+{
+  "name": "Vitalia OS | Clinical & Financial ERP",
+  "description": "Sistema integral de gestión clínica, asistencia periódica, expediente multidisciplinario, inventario y finanzas para el Centro Diurno Vitalia (Concepción, Chile).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

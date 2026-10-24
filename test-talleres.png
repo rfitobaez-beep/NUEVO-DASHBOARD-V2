@@ -1,0 +1,131 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e10]: VITALIA OS
+            - generic [ref=e11]: CLINICAL
+          - paragraph [ref=e12]: Centro Diurno Concepción
+      - generic [ref=e13]:
+        - generic [ref=e14]: Sede Pedro de Valdivia
+        - generic [ref=e16]: SENAMA / MINSAL
+      - navigation [ref=e17]:
+        - button "Dashboard Ejecutivo" [ref=e18] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: Padrón de Pacientes
+          - generic [ref=e27]: "5"
+        - button "Asistencia Periódica" [ref=e28] [cursor=pointer]
+        - button "Talleres y Terapias" [active] [ref=e32] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e36] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e42] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]: Vitalia Copilot IA
+          - generic [ref=e53]: LIVE
+    - generic [ref=e54]:
+      - generic [ref=e55]: Vitalia Concepción
+      - generic [ref=e56]: SENAMA / MINSAL
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - generic [ref=e59]:
+        - heading "Planificador de Talleres & Motor Cognitivo" [level=1] [ref=e210]
+        - generic [ref=e61]: "|"
+        - generic [ref=e62]: "Guardado automático: 2:08:26 a. m."
+      - generic [ref=e65]:
+        - button "+ Gasto / Compra Express" [ref=e66] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e69] [cursor=pointer]
+    - main [ref=e72]:
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - heading "Cronograma Semanal de Talleres Terapéuticos" [level=3] [ref=e214]
+            - paragraph [ref=e215]: Planificación adaptada a los perfiles cognitivos y físicos de los participantes
+          - button "+ Nuevo Taller Terapéutico" [ref=e216] [cursor=pointer]
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - generic [ref=e222]:
+                - generic [ref=e223]: Cognitivo
+                - generic [ref=e224]: Lunes y Miércoles 10:30
+              - heading "Neuro-Gym & Memoria de Trabajo" [level=4] [ref=e225]
+              - paragraph [ref=e226]:
+                - text: "Responsable:"
+                - strong [ref=e227]: Camila Valenzuela (TO)
+              - generic [ref=e228]:
+                - generic [ref=e229]: "Perfiles admitidos:"
+                - generic [ref=e230]: DCL
+                - generic [ref=e231]: Autovalente
+            - generic [ref=e232]:
+              - generic [ref=e233]:
+                - text: "Cupo:"
+                - strong [ref=e234]: 4 pacientes
+              - generic [ref=e235]:
+                - button "Ficha" [ref=e236] [cursor=pointer]
+                - button "Editar" [ref=e237] [cursor=pointer]
+                - button "Eliminar Taller" [ref=e240] [cursor=pointer]
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - generic [ref=e246]: Físico/Kinesiológico
+                - generic [ref=e247]: Martes y Jueves 11:00
+              - heading "Psicomotricidad, Equilibrio y Prevención de Caídas" [level=4] [ref=e248]
+              - paragraph [ref=e249]:
+                - text: "Responsable:"
+                - strong [ref=e250]: Ignacio Fuentes (Klgo)
+              - generic [ref=e251]:
+                - generic [ref=e252]: "Perfiles admitidos:"
+                - generic [ref=e253]: Autovalente
+                - generic [ref=e254]: DCL
+                - generic [ref=e255]: Moderado
+            - generic [ref=e256]:
+              - generic [ref=e257]:
+                - text: "Cupo:"
+                - strong [ref=e258]: 5 pacientes
+              - generic [ref=e259]:
+                - button "Ficha" [ref=e260] [cursor=pointer]
+                - button "Editar" [ref=e261] [cursor=pointer]
+                - button "Eliminar Taller" [ref=e264] [cursor=pointer]
+          - generic [ref=e267]:
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: Socio-emocional
+                - generic [ref=e271]: Viernes 15:30
+              - heading "Musicoterapia, Reminiscencia y Cancionero Chileno" [level=4] [ref=e272]
+              - paragraph [ref=e273]:
+                - text: "Responsable:"
+                - strong [ref=e274]: Equipo Multidisciplinario
+              - generic [ref=e275]:
+                - generic [ref=e276]: "Perfiles admitidos:"
+                - generic [ref=e277]: Autovalente
+                - generic [ref=e278]: DCL
+                - generic [ref=e279]: Moderado
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - text: "Cupo:"
+                - strong [ref=e282]: 5 pacientes
+              - generic [ref=e283]:
+                - button "Ficha" [ref=e284] [cursor=pointer]
+                - button "Editar" [ref=e285] [cursor=pointer]
+                - button "Eliminar Taller" [ref=e288] [cursor=pointer]
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: Ocupacional
+                - generic [ref=e295]: Jueves 15:00
+              - heading "Huerto Terapéutico y Vivero Sensorial" [level=4] [ref=e296]
+              - paragraph [ref=e297]:
+                - text: "Responsable:"
+                - strong [ref=e298]: Camila Valenzuela (TO)
+              - generic [ref=e299]:
+                - generic [ref=e300]: "Perfiles admitidos:"
+                - generic [ref=e301]: Autovalente
+                - generic [ref=e302]: DCL
+            - generic [ref=e303]:
+              - generic [ref=e304]:
+                - text: "Cupo:"
+                - strong [ref=e305]: 3 pacientes
+              - generic [ref=e306]:
+                - button "Ficha" [ref=e307] [cursor=pointer]
+                - button "Editar" [ref=e308] [cursor=pointer]
+                - button "Eliminar Taller" [ref=e311] [cursor=pointer]

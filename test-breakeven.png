@@ -1,0 +1,157 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e10]: VITALIA OS
+            - generic [ref=e11]: CLINICAL
+          - paragraph [ref=e12]: Centro Diurno Concepción
+      - generic [ref=e13]:
+        - generic [ref=e14]: Sede Pedro de Valdivia
+        - generic [ref=e16]: SENAMA / MINSAL
+      - navigation [ref=e17]:
+        - button "Dashboard Ejecutivo" [ref=e18] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: Padrón de Pacientes
+          - generic [ref=e27]: "5"
+        - button "Asistencia Periódica" [ref=e28] [cursor=pointer]
+        - button "Talleres y Terapias" [ref=e32] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e36] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e42] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]: Vitalia Copilot IA
+          - generic [ref=e53]: LIVE
+    - generic [ref=e54]:
+      - generic [ref=e55]: Vitalia Concepción
+      - generic [ref=e56]: SENAMA / MINSAL
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - generic [ref=e59]:
+        - heading "Finanzas, Cobranzas & Flujo CLP" [level=1] [ref=e314]
+        - generic [ref=e61]: "|"
+        - generic [ref=e62]: "Guardado automático: 2:08:40 a. m."
+      - generic [ref=e65]:
+        - button "+ Gasto / Compra Express" [ref=e66] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e69] [cursor=pointer]
+    - main [ref=e72]:
+      - generic [ref=e407]:
+        - generic [ref=e408]:
+          - generic [ref=e409]:
+            - text: Total Cobranzas Mes
+            - generic [ref=e410]: $1.860.000
+            - generic [ref=e411]: "Efectivo: $1.020.000"
+          - generic [ref=e412]:
+            - text: Pendiente de Cobro
+            - generic [ref=e413]: $840.000
+            - generic [ref=e414]: 2 cuotas por recaudar
+          - generic [ref=e415]:
+            - text: Gastos Fijos Estructura
+            - generic [ref=e416]: $6.392.000
+            - generic [ref=e417]: Arriendo, Servicios, Sueldos
+          - generic [ref=e418]:
+            - text: Gastos Variables / Compras
+            - generic [ref=e419]: $127.700
+            - generic [ref=e420]: Insumos y Farmacia del mes
+        - generic [ref=e421]:
+          - generic [ref=e422]:
+            - button "1. Cobranzas a Pacientes (5)" [ref=e423] [cursor=pointer]
+            - button "2. Gastos Fijos & Nómina (6)" [ref=e424] [cursor=pointer]
+            - button "3. Gastos Variables & Compras Express (3)" [ref=e425] [cursor=pointer]
+            - button "4. Simulador Punto de Equilibrio" [ref=e426] [cursor=pointer]
+          - generic [ref=e427]:
+            - generic [ref=e428]: "Mes:"
+            - textbox [ref=e429]: 2026-10
+        - generic [ref=e431]:
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - heading "Simulador Interactivo de Punto de Equilibrio" [level=4] [ref=e434]
+              - paragraph [ref=e435]: Modifica los costos fijos, el arancel promedio o la capacidad para evaluar la viabilidad económica en tiempo real
+            - generic [ref=e436]:
+              - button "Cargar Datos Reales del ERP" [ref=e437] [cursor=pointer]
+              - button "Guardar Capacidad (25 cupos)" [ref=e438] [cursor=pointer]
+          - generic [ref=e439]:
+            - generic [ref=e440]:
+              - generic [ref=e441]:
+                - generic [ref=e442]: Costos Fijos Totales (CLP)
+                - generic [ref=e443]: Arriendo, sueldos, servicios
+              - spinbutton [ref=e444]: "6392000"
+              - slider [ref=e445] [cursor=pointer]: "6400000"
+            - generic [ref=e446]:
+              - generic [ref=e447]:
+                - generic [ref=e448]: Arancel Promedio (CLP)
+                - generic [ref=e449]: Por paciente / mes
+              - spinbutton [ref=e450]: "372000"
+              - slider [ref=e451] [cursor=pointer]: "370000"
+            - generic [ref=e452]:
+              - generic [ref=e453]:
+                - generic [ref=e454]: Capacidad Habilitada
+                - generic [ref=e455]: Cupos diurnos máximos
+              - spinbutton [ref=e456]: "25"
+              - slider [ref=e457] [cursor=pointer]: "25"
+          - generic [ref=e458]:
+            - generic [ref=e459]:
+              - generic [ref=e460]: Punto de Equilibrio
+              - generic [ref=e461]:
+                - generic [ref=e462]: "17.2"
+                - generic [ref=e463]: pacientes
+              - generic [ref=e464]:
+                - text: "Ocupación mínima:"
+                - strong [ref=e465]: 69%
+            - generic [ref=e466]:
+              - generic [ref=e467]: Margen de Seguridad
+              - generic [ref=e468]:
+                - generic [ref=e469]: "7"
+                - generic [ref=e470]: cupos libres
+              - generic [ref=e471]: Rentabilidad neta pura
+            - generic [ref=e472]:
+              - generic [ref=e473]: Utilidad a Plena Capacidad
+              - generic [ref=e474]: $2.908.000
+              - generic [ref=e475]: 25 pacientes con $372.000
+            - generic [ref=e476]:
+              - generic [ref=e477]: Facturación de Equilibrio
+              - generic [ref=e478]: $6.398.400
+              - generic [ref=e479]: Total ingresos para cubrir costos
+          - generic [ref=e480]:
+            - generic [ref=e481]:
+              - heading "Matriz de Sensibilidad & Proyecciones Financieras" [level=5] [ref=e482]
+              - generic [ref=e483]: Estimación mensual
+            - table [ref=e484]:
+              - rowgroup [ref=e485]:
+                - row [ref=e486]:
+                  - columnheader "Pacientes Activos" [ref=e487]
+                  - columnheader "Ocupación %" [ref=e488]
+                  - columnheader "Ingresos Mensuales" [ref=e489]
+                  - columnheader "Costos Fijos" [ref=e490]
+                  - columnheader "Margen Operacional Neto" [ref=e491]
+                  - columnheader "Resultado" [ref=e492]
+              - rowgroup [ref=e493]:
+                - row [ref=e494]:
+                  - cell "10 pacientes" [ref=e495]
+                  - cell "40%" [ref=e496]
+                  - cell "$3.720.000" [ref=e497]
+                  - cell "$6.392.000" [ref=e498]
+                  - cell "$-2.672.000" [ref=e499]
+                  - cell "✕ Déficit" [ref=e500]
+                - row [ref=e501]:
+                  - cell "15 pacientes" [ref=e502]
+                  - cell "60%" [ref=e503]
+                  - cell "$5.580.000" [ref=e504]
+                  - cell "$6.392.000" [ref=e505]
+                  - cell "$-812.000" [ref=e506]
+                  - cell "✕ Déficit" [ref=e507]
+                - row [ref=e508]:
+                  - cell "20 pacientes" [ref=e509]
+                  - cell "80%" [ref=e510]
+                  - cell "$7.440.000" [ref=e511]
+                  - cell "$6.392.000" [ref=e512]
+                  - cell "$1.048.000" [ref=e513]
+                  - cell "✓ Superávit" [ref=e514]
+                - row [ref=e515]:
+                  - cell "25 pacientes (Plena Capacidad)" [ref=e516]
+                  - cell "100%" [ref=e517]
+                  - cell "$9.300.000" [ref=e518]
+                  - cell "$6.392.000" [ref=e519]
+                  - cell "$2.908.000" [ref=e520]
+                  - cell "✓ Superávit" [ref=e521]

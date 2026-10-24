@@ -1,0 +1,140 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Vitalia Logo" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: VITALIA OS
+          - paragraph [ref=e11]: Centro Diurno Concepción
+      - navigation [ref=e12]:
+        - button "Dashboard Ejecutivo" [ref=e13] [cursor=pointer]
+        - button "Padrón de Pacientes 5" [ref=e17] [cursor=pointer]:
+          - generic [ref=e18]: Padrón de Pacientes
+          - generic [ref=e22]: "5"
+        - button "Asistencia Periódica" [ref=e23] [cursor=pointer]
+        - button "Talleres y Terapias" [ref=e27] [cursor=pointer]
+        - button "Finanzas & Flujo CLP" [ref=e31] [cursor=pointer]
+        - button "Bodega & Personal" [ref=e37] [cursor=pointer]
+        - button "Vitalia Copilot IA LIVE" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]: Vitalia Copilot IA
+          - generic [ref=e48]: LIVE
+    - generic [ref=e49]:
+      - generic [ref=e50]: Vitalia Concepción
+      - generic [ref=e51]: SENAMA / MINSAL
+  - generic [ref=e52]:
+    - banner [ref=e53]:
+      - generic [ref=e54]:
+        - heading "Dashboard Ejecutivo" [level=1] [ref=e55]
+        - generic [ref=e56]: "|"
+        - generic [ref=e57]: "Guardado automático: 2:18:51 a. m."
+      - generic [ref=e60]:
+        - button "+ Gasto / Compra Express" [ref=e61] [cursor=pointer]
+        - button "+ Nuevo Paciente" [ref=e64] [cursor=pointer]
+    - main [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: Ocupación Diurna
+            - generic [ref=e77]:
+              - generic [ref=e78]: "5"
+              - generic [ref=e79]: / 25 cupos
+            - generic [ref=e82]:
+              - generic [ref=e83]: "Tasa de Ocupación:"
+              - generic [ref=e84]: 20%
+          - generic [ref=e85]:
+            - generic [ref=e86]: Asistencia Hoy (2026-10-21)
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: "4"
+                - generic [ref=e94]: Presentes
+              - generic [ref=e95]:
+                - generic [ref=e96]: 1 Ausentes
+                - generic [ref=e97]: 0 Licencias
+            - button "Gestionar planilla diaria →" [ref=e99] [cursor=pointer]
+          - generic [ref=e100]:
+            - generic [ref=e101]: Margen Neto (2026-10)
+            - generic [ref=e106]:
+              - generic [ref=e107]: $-4.659.700
+              - generic [ref=e108]: "Ingresos: $1.860.000"
+            - generic [ref=e109]:
+              - generic [ref=e110]: "Egresos Totales:"
+              - generic [ref=e111]: $6.519.700
+          - generic [ref=e112]:
+            - generic [ref=e113]: Flujo Real en Caja
+            - generic [ref=e118]:
+              - generic [ref=e119]: $-2.049.700
+              - generic [ref=e120]: "Por Cobrar: $840.000"
+            - generic [ref=e121]:
+              - generic [ref=e122]: "Punto de Equilibrio:"
+              - generic [ref=e123]: 17.2 pacientes
+        - generic [ref=e124]:
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - heading "Flujo Financiero Mensual (CLP)" [level=3] [ref=e128]
+              - paragraph [ref=e129]: Ingresos cobrados vs Egresos Fijos y Variables
+            - generic [ref=e130]: Mes Actual
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - heading "Monitoreo Cognitivo & Estabilidad" [level=3] [ref=e136]
+              - paragraph [ref=e137]: Puntaje promedio Folstein MMSE cohorte activa
+            - generic [ref=e138]: SENAMA DCL
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - heading "Atención & Precauciones Especiales (Alergias y Movilidad)" [level=3] [ref=e144]
+              - generic [ref=e147]: 5 en seguimiento
+            - table [ref=e149]:
+              - rowgroup [ref=e150]:
+                - row [ref=e151]:
+                  - columnheader "Paciente" [ref=e152]
+                  - columnheader "Diagnóstico Base" [ref=e153]
+                  - columnheader "Movilidad" [ref=e154]
+                  - columnheader "Alergias Conocidas" [ref=e155]
+                  - columnheader "Ficha" [ref=e156]
+              - rowgroup [ref=e157]:
+                - row [ref=e158]:
+                  - cell "Elena Morales Sanhueza" [ref=e159]
+                  - cell "Deterioro Cognitivo Leve (DCL) amnésico" [ref=e160]
+                  - cell "Autovalente con bastón" [ref=e161]
+                  - cell "Penicilina, AINEs" [ref=e162]
+                  - cell [ref=e163]:
+                    - button "Ver →" [ref=e164] [cursor=pointer]
+                - row [ref=e165]:
+                  - cell "Carlos Ruiz-Tagle Vial" [ref=e166]
+                  - cell "Enfermedad de Alzheimer Inicial / GDS 4" [ref=e167]
+                  - cell "Asistencia leve para marcha" [ref=e168]
+                  - cell "Sin alergias conocidas" [ref=e169]
+                  - cell [ref=e170]:
+                    - button "Ver →" [ref=e171] [cursor=pointer]
+                - row [ref=e172]:
+                  - cell "Margarita Troncoso Benítez" [ref=e173]
+                  - cell "Secuela ACV isquémico (Hemiparesia derecha leve) & Artrosis" [ref=e174]
+                  - cell "Autovalente con supervisión" [ref=e175]
+                  - cell "Sulfas" [ref=e176]
+                  - cell [ref=e177]:
+                    - button "Ver →" [ref=e178] [cursor=pointer]
+                - row [ref=e179]:
+                  - cell "Hernán Carrasco Sepúlveda" [ref=e180]
+                  - cell "Parkinson inicial, Temblor en reposo mano derecha" [ref=e181]
+                  - cell "Marcha parkinsoniana con andador" [ref=e182]
+                  - cell "Sin alergias" [ref=e183]
+                  - cell [ref=e184]:
+                    - button "Ver →" [ref=e185] [cursor=pointer]
+                - row [ref=e186]:
+                  - cell "Sylvia Urrutia Matthei" [ref=e187]
+                  - cell "Depresión del adulto mayor & Aislamiento social" [ref=e188]
+                  - cell "Completamente autovalente" [ref=e189]
+                  - cell "Lactosa" [ref=e190]
+                  - cell [ref=e191]:
+                    - button "Ver →" [ref=e192] [cursor=pointer]
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - heading "Alerta de Insumos" [level=3] [ref=e196]
+                - button "Ir a Bodega" [ref=e197] [cursor=pointer]
+              - generic [ref=e199]:
+                - generic [ref=e200]:
+                  - generic [ref=e201]: Tiras Reactivas Glucómetro (Caja 50u)
+                  - generic [ref=e202]: "Stock actual: 1 Cajas (Mínimo: 2)"
+                - button "Comprar" [ref=e203] [cursor=pointer]
+            - generic [ref=e204]: "Personal Activo Hoy: 4 profesionales"
