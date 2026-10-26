@@ -52,28 +52,37 @@
 <body class="bg-slate-50 text-slate-800 antialiased overflow-hidden selection:bg-sky-100 selection:text-sky-900">
 
   <!-- Main Viewport Shell -->
-  <div class="flex h-screen w-screen overflow-hidden">
+  <div class="flex h-screen w-screen overflow-hidden relative">
     
-    <!-- Left Fixed Sidebar (w-72 bg-slate-900) -->
-    <aside class="w-72 bg-slate-900 text-slate-300 border-r border-slate-800 flex flex-col justify-between shrink-0 select-none z-20">
+    <!-- Mobile Backdrop Overlay -->
+    <div id="mobile-sidebar-backdrop" onclick="window.closeMobileMenu()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-30 hidden md:hidden transition-opacity"></div>
+
+    <!-- Left Sidebar (Responsive Drawer on mobile, static on desktop) -->
+    <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-40 w-72 bg-slate-900 text-slate-300 border-r border-slate-800 flex flex-col justify-between shrink-0 select-none transform -translate-x-full md:translate-x-0 md:static transition-transform duration-300 ease-in-out shadow-2xl md:shadow-none">
       <div>
         <!-- Brand & Logo -->
-        <div class="p-5 border-b border-slate-800/80 flex items-center space-x-3">
-          <div class="w-11 h-11 rounded-lg bg-white p-1 flex items-center justify-center shrink-0 shadow-md">
-            <img src="/assets/aistudio/Logo_Vitalia_sin_fondo__1__b610840d.png" 
-                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%230369a1\' stroke-width=\'2\'><path d=\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\'/></svg>'" 
-                 alt="Vitalia Logo" class="max-h-full max-w-full object-contain">
-          </div>
-          <div>
-            <div class="flex items-center space-x-1.5">
-              <span class="font-bold text-white text-base tracking-tight">VITALIA OS</span>
+        <div class="p-4 sm:p-5 border-b border-slate-800/80 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-white p-1 flex items-center justify-center shrink-0 shadow-md">
+              <img src="/assets/aistudio/Logo_Vitalia_sin_fondo__1__b610840d.png" 
+                   onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%230369a1\' stroke-width=\'2\'><path d=\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\'/></svg>'" 
+                   alt="Vitalia Logo" class="max-h-full max-w-full object-contain">
             </div>
-            <p class="text-xs text-slate-400">Centro Diurno Concepción</p>
+            <div>
+              <div class="flex items-center space-x-1.5">
+                <span class="font-bold text-white text-base tracking-tight">VITALIA OS</span>
+              </div>
+              <p class="text-xs text-slate-400">Centro Diurno Concepción</p>
+            </div>
           </div>
+          <!-- Close button on mobile -->
+          <button onclick="window.closeMobileMenu()" class="p-1.5 text-slate-400 hover:text-white rounded-lg md:hidden hover:bg-slate-800 transition-colors" title="Cerrar menú">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
 
         <!-- Navigation Menu -->
-        <nav class="p-3 space-y-1 text-sm font-medium">
+        <nav class="p-3 space-y-1 text-sm font-medium overflow-y-auto max-h-[calc(100vh-140px)]">
           <button onclick="window.switchTab('dashboard')" id="nav-dashboard" class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-left transition-colors hover:bg-slate-800/70 tab-active">
             <svg class="w-5 h-5 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
             <span>Dashboard Ejecutivo</span>
@@ -140,46 +149,78 @@
     </aside>
 
     <!-- Right Workspace Area -->
-    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+    <div class="flex-1 flex flex-col h-screen overflow-hidden min-w-0">
       
-      <!-- Top Header (h-16 bg-white border-b border-slate-200 px-8) -->
-      <header class="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between shrink-0 z-10">
-        <!-- Breadcrumb & Active View Title -->
-        <div class="flex items-center gap-3">
-          <h1 id="header-view-title" class="text-lg font-bold text-slate-900 tracking-tight">Dashboard Ejecutivo</h1>
-          <span class="text-slate-300">|</span>
-          <div id="autosave-badge" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200/80 transition-all">
+      <!-- Top Header (h-14 sm:h-16 bg-white border-b border-slate-200 px-3 sm:px-6 md:px-8 flex items-center justify-between shrink-0 z-10) -->
+      <header class="h-14 sm:h-16 bg-white border-b border-slate-200 px-3 sm:px-6 md:px-8 flex items-center justify-between shrink-0 z-10 gap-2">
+        <!-- Left: Hamburger button (mobile) + Breadcrumb & Active View Title -->
+        <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <button onclick="window.toggleMobileMenu()" class="p-1.5 -ml-1 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg md:hidden focus:outline-none shrink-0" title="Abrir Menú">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+
+          <h1 id="header-view-title" class="text-xs sm:text-base md:text-lg font-bold text-slate-900 tracking-tight truncate">Dashboard Ejecutivo</h1>
+          <span class="text-slate-300 hidden md:inline">|</span>
+          <div id="autosave-badge" class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200/80 transition-all shrink-0">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span id="autosave-text">Guardado automático: --:--:--</span>
+            <span id="autosave-text">Guardado: --:--:--</span>
           </div>
         </div>
 
-        <!-- Executive Quick Actions -->
-        <div class="flex items-center gap-2">
+        <!-- Executive Quick Actions: Responsive layout -->
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0">
           <!-- Button: Registrar Ingreso -->
-          <button onclick="window.openIncomeModal()" class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 rounded-lg text-xs font-semibold transition-colors border border-emerald-300">
-            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-            + Ingreso CLP
+          <button onclick="window.openIncomeModal()" class="flex items-center gap-1 px-2 py-1.5 sm:px-3 sm:py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors border border-emerald-300" title="Registrar Ingreso">
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+            <span>+ Ingreso</span>
           </button>
 
           <!-- Button: Gasto / Compra Express -->
-          <button onclick="window.openQuickExpenseModal()" class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors border border-slate-300/80">
-            <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-            + Gasto Express
+          <button onclick="window.openQuickExpenseModal()" class="flex items-center gap-1 px-2 py-1.5 sm:px-3 sm:py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors border border-slate-300/80" title="Registrar Gasto">
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+            <span>+ Gasto</span>
           </button>
 
           <!-- Button: Nuevo Paciente -->
-          <button onclick="window.openNewPatientModal()" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-700 hover:bg-sky-800 text-white rounded-lg text-xs font-semibold transition-colors shadow-xs">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM3 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 019.374 21c-2.331 0-4.512-.645-6.374-1.765z"/></svg>
-            + Nuevo Paciente
+          <button onclick="window.openNewPatientModal()" class="flex items-center gap-1 px-2 py-1.5 sm:px-3.5 sm:py-1.5 bg-sky-700 hover:bg-sky-800 text-white rounded-lg text-[11px] sm:text-xs font-semibold transition-colors shadow-xs" title="Nuevo Paciente">
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM3 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 019.374 21c-2.331 0-4.512-.645-6.374-1.765z"/></svg>
+            <span>+ Paciente</span>
           </button>
         </div>
       </header>
 
-      <!-- Main Scrollable Container (flex-1 overflow-y-auto p-8 bg-slate-50) -->
-      <main id="app-main-content" class="flex-1 overflow-y-auto p-8 bg-slate-50">
+      <!-- Main Scrollable Container (responsive paddings with bottom nav cushion) -->
+      <main id="app-main-content" class="flex-1 overflow-y-auto p-3 sm:p-5 md:p-8 pb-20 md:pb-8 bg-slate-50 min-w-0">
         <!-- Dynamic Module Views rendered by JS -->
       </main>
+
+      <!-- Mobile Sticky Bottom Navigation Bar (md:hidden) -->
+      <nav id="mobile-bottom-nav" class="fixed bottom-0 left-0 right-0 z-20 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 md:hidden flex items-center justify-around px-1 py-1.5 shadow-2xl select-none">
+        <button onclick="window.switchTab('dashboard')" id="mob-nav-dashboard" class="flex flex-col items-center justify-center flex-1 py-1 text-sky-400 font-bold transition-colors">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+          <span class="text-[10px] leading-none">Inicio</span>
+        </button>
+        <button onclick="window.switchTab('patients')" id="mob-nav-patients" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-colors">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+          <span class="text-[10px] leading-none">Pacientes</span>
+        </button>
+        <button onclick="window.switchTab('attendance')" id="mob-nav-attendance" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-colors">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+          <span class="text-[10px] leading-none">Asistencia</span>
+        </button>
+        <button onclick="window.switchTab('finance')" id="mob-nav-finance" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-colors">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0 0h.75a.75.75 0 01.75.75v.75m0-9.75H12m8.25 0H12m0 0v9.75m0-9.75a3.75 3.75 0 00-3.75-3.75H6.75a3.75 3.75 0 00-3.75 3.75m17.25 0a3.75 3.75 0 013.75 3.75v5.25a3.75 3.75 0 01-3.75 3.75H18M7.5 12a2.25 2.25 0 104.5 0 2.25 2.25 0 00-4.5 0z"/></svg>
+          <span class="text-[10px] leading-none">Finanzas</span>
+        </button>
+        <button onclick="window.switchTab('ai-assistant')" id="mob-nav-ai-assistant" class="flex flex-col items-center justify-center flex-1 py-1 text-sky-400 hover:text-sky-300 transition-colors">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          <span class="text-[10px] font-bold leading-none">Copilot</span>
+        </button>
+        <button onclick="window.toggleMobileMenu()" id="mob-nav-more" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-colors" title="Ver más módulos">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          <span class="text-[10px] leading-none">Más</span>
+        </button>
+      </nav>
     </div>
   </div>
 
@@ -643,12 +684,37 @@
       }, 3500);
     };
 
+    // Control de Drawer Móvil (Menú Desplegable)
+    window.toggleMobileMenu = function() {
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('mobile-sidebar-backdrop');
+      if (!sidebar) return;
+      const isOpen = !sidebar.classList.contains('-translate-x-full');
+      if (isOpen) {
+        sidebar.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+      } else {
+        sidebar.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+      }
+    };
+
+    window.closeMobileMenu = function() {
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('mobile-sidebar-backdrop');
+      if (sidebar) sidebar.classList.add('-translate-x-full');
+      if (backdrop) backdrop.classList.add('hidden');
+    };
+
     // Navegación de pestañas principales
     window.switchTab = function(tabId) {
       if (!appState) return;
       appState.activeTab = tabId;
 
-      // Actualizar clases activas en sidebar
+      // Cerrar menú móvil automáticamente al seleccionar un módulo
+      window.closeMobileMenu();
+
+      // Actualizar clases activas en sidebar desktop
       const navIds = ['dashboard', 'patients', 'attendance', 'calendar', 'workshops', 'finance', 'inventory-staff', 'ai-assistant'];
       navIds.forEach(id => {
         const btn = document.getElementById(`nav-${id}`);
@@ -661,16 +727,35 @@
         }
       });
 
+      // Actualizar barra de navegación móvil inferior
+      const mobileNavMap = {
+        dashboard: 'mob-nav-dashboard',
+        patients: 'mob-nav-patients',
+        attendance: 'mob-nav-attendance',
+        finance: 'mob-nav-finance',
+        'ai-assistant': 'mob-nav-ai-assistant'
+      };
+      Object.keys(mobileNavMap).forEach(k => {
+        const mBtn = document.getElementById(mobileNavMap[k]);
+        if (mBtn) {
+          if (k === tabId) {
+            mBtn.className = 'flex flex-col items-center justify-center flex-1 py-1 text-sky-400 font-bold transition-colors';
+          } else {
+            mBtn.className = 'flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-colors';
+          }
+        }
+      });
+
       // Título en el header
       const titles = {
         dashboard: 'Dashboard Ejecutivo (Command Center)',
-        patients: 'Padrón de Pacientes & Expedientes Clínicos',
-        attendance: 'Asistencia Periódica & Matriz Mensual',
-        calendar: 'Calendario Mensual & Planificador de Actividades',
-        workshops: 'Planificador de Talleres & Motor Cognitivo',
+        patients: 'Padrón de Pacientes & Expedientes',
+        attendance: 'Asistencia Periódica & Matriz',
+        calendar: 'Calendario Mensual & Actividades',
+        workshops: 'Talleres & Terapias',
         finance: 'Finanzas, Cobranzas & Flujo CLP',
-        'inventory-staff': 'Bodega de Insumos & Nómina de Personal',
-        'ai-assistant': 'Vitalia Copilot IA (Control por Comandos)'
+        'inventory-staff': 'Bodega de Insumos & Nómina',
+        'ai-assistant': 'Vitalia Copilot IA'
       };
       const titleElem = document.getElementById('header-view-title');
       if (titleElem) {
@@ -3599,19 +3684,21 @@
 
           <!-- Cuadrícula Mensual de Casillas (7 Columnas Lunes a Domingo) -->
           <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
-            <!-- Días de la semana -->
-            <div class="grid grid-cols-7 bg-slate-100 border-b border-slate-200 text-center text-xs font-bold text-slate-700 py-2.5">
-              <div>Lunes</div>
-              <div>Martes</div>
-              <div>Miércoles</div>
-              <div>Jueves</div>
-              <div>Viernes</div>
-              <div class="text-slate-500">Sábado</div>
-              <div class="text-slate-500">Domingo</div>
-            </div>
+            <div class="overflow-x-auto">
+              <div class="min-w-[500px]">
+                <!-- Días de la semana -->
+                <div class="grid grid-cols-7 bg-slate-100 border-b border-slate-200 text-center text-xs font-bold text-slate-700 py-2.5">
+                  <div><span class="sm:hidden">Lun</span><span class="hidden sm:inline">Lunes</span></div>
+                  <div><span class="sm:hidden">Mar</span><span class="hidden sm:inline">Martes</span></div>
+                  <div><span class="sm:hidden">Mié</span><span class="hidden sm:inline">Miércoles</span></div>
+                  <div><span class="sm:hidden">Jue</span><span class="hidden sm:inline">Jueves</span></div>
+                  <div><span class="sm:hidden">Vie</span><span class="hidden sm:inline">Viernes</span></div>
+                  <div class="text-slate-500"><span class="sm:hidden">Sáb</span><span class="hidden sm:inline">Sábado</span></div>
+                  <div class="text-slate-500"><span class="sm:hidden">Dom</span><span class="hidden sm:inline">Domingo</span></div>
+                </div>
 
-            <!-- Casillas del Calendario -->
-            <div class="grid grid-cols-7 divide-x divide-y divide-slate-100">
+                <!-- Casillas del Calendario -->
+                <div class="grid grid-cols-7 divide-x divide-y divide-slate-100">
               ${cells.map(cell => {
                 const isToday = cell.dateStr === today;
                 const dayNotes = appState.calendarNotes.filter(n => n.date === cell.dateStr);
@@ -3664,9 +3751,10 @@
               }).join('')}
             </div>
           </div>
-
         </div>
-      `;
+      </div>
+    </div>
+  `;
     }
 
     window.changeCalendarMonth = function(delta) {
