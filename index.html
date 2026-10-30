@@ -160,8 +160,12 @@
           </button>
 
           <h1 id="header-view-title" class="text-xs sm:text-base md:text-lg font-bold text-slate-900 tracking-tight truncate">Dashboard Ejecutivo</h1>
-          <span class="text-slate-300 hidden md:inline">|</span>
-          <div id="autosave-badge" class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200/80 transition-all shrink-0">
+          <span class="text-slate-300 hidden sm:inline">|</span>
+          <div id="cloud-sync-badge" class="flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-300 transition-all shrink-0" title="Sincronización en tiempo real entre teléfono, PC y otros usuarios">
+            <span id="cloud-sync-dot" class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            <span id="cloud-sync-text">Conectando Nube...</span>
+          </div>
+          <div id="autosave-badge" class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200/80 transition-all shrink-0">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span id="autosave-text">Guardado: --:--:--</span>
           </div>
@@ -604,6 +608,11 @@
       window.appState = appState;
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+        
+        // Sincronización instantánea en la Nube (Firestore Multi-Dispositivo)
+        if (typeof window.pushStateToCloud === 'function') {
+          window.pushStateToCloud(appState);
+        }
         
         // Actualizar badge visual en el Header
         const now = new Date();
@@ -1255,6 +1264,13 @@
         // Chart 1: Financial
         const ctxFin = document.getElementById('chart-financial-flow');
         if (ctxFin) {
+          if (chartsInstances['financial']) {
+            try { chartsInstances['financial'].destroy(); } catch (_) {}
+          }
+          if (typeof Chart.getChart === 'function') {
+            const old = Chart.getChart(ctxFin);
+            if (old) { try { old.destroy(); } catch (_) {} }
+          }
           chartsInstances['financial'] = new Chart(ctxFin, {
             type: 'bar',
             data: {
@@ -1283,6 +1299,13 @@
         // Chart 2: Cognitive
         const ctxCog = document.getElementById('chart-cognitive-cohort');
         if (ctxCog) {
+          if (chartsInstances['cognitive']) {
+            try { chartsInstances['cognitive'].destroy(); } catch (_) {}
+          }
+          if (typeof Chart.getChart === 'function') {
+            const old = Chart.getChart(ctxCog);
+            if (old) { try { old.destroy(); } catch (_) {} }
+          }
           chartsInstances['cognitive'] = new Chart(ctxCog, {
             type: 'line',
             data: {
@@ -2297,6 +2320,13 @@
         setTimeout(() => {
           const ctx = document.getElementById('chart-patient-mmse');
           if (ctx && patient.mmseHistory) {
+            if (chartsInstances['patient_mmse']) {
+              try { chartsInstances['patient_mmse'].destroy(); } catch (_) {}
+            }
+            if (typeof Chart.getChart === 'function') {
+              const old = Chart.getChart(ctx);
+              if (old) { try { old.destroy(); } catch (_) {} }
+            }
             chartsInstances['patient_mmse'] = new Chart(ctx, {
               type: 'line',
               data: {
@@ -5905,5 +5935,217 @@
     });
   </script>
 
+  <!-- MOTOR DE SINCRONIZACIÓN EN LA NUBE EN TIEMPO REAL (FIREBASE FIRESTORE MULTI-DISPOSITIVO) -->
+  <script type="module">
+    import { initializeApp, getApps, getApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+    import { 
+      getFirestore, 
+      doc, 
+      onSnapshot, 
+      setDoc, 
+      getDoc 
+    } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+
+    const firebaseConfig = {
+      projectId: "clear-house-k8gvj",
+      appId: "1:61481959489:web:c7f025575f1c2535e486c0",
+      apiKey: "AIzaSyDYR5FaU_lnJrXr9PWQFqRPV7Fv6gP6kks",
+      authDomain: "clear-house-k8gvj.firebaseapp.com",
+      firestoreDatabaseId: "ai-studio-vitaliaosclinica-4094a784-c15c-4e47-b7ef-5bd38232527f",
+      storageBucket: "clear-house-k8gvj.firebasestorage.app",
+      messagingSenderId: "61481959489"
+    };
+
+    const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+    const workspaceDocRef = doc(db, 'workspaces', 'vitalia_central');
+
+    let isReceivingFromCloud = false;
+    let isCloudSyncReady = false;
+    let syncDebounceTimer = null;
+
+    function updateCloudStatusUI(status, message) {
+      const syncBadge = document.getElementById('cloud-sync-badge');
+      const syncText = document.getElementById('cloud-sync-text');
+      const syncDot = document.getElementById('cloud-sync-dot');
+
+      if (syncBadge && syncText && syncDot) {
+        syncBadge.classList.remove('hidden');
+        if (status === 'synced') {
+          syncDot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+          syncText.innerText = message || 'En la Nube (Tiempo Real)';
+          syncBadge.className = 'flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300';
+        } else if (status === 'syncing') {
+          syncDot.className = 'w-2 h-2 rounded-full bg-amber-500 animate-ping';
+          syncText.innerText = message || 'Sincronizando...';
+          syncBadge.className = 'flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-300';
+        } else if (status === 'error') {
+          syncDot.className = 'w-2 h-2 rounded-full bg-rose-500';
+          syncText.innerText = message || 'Sin conexión Nube';
+          syncBadge.className = 'flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-rose-50 text-rose-800 border border-rose-300';
+        } else if (status === 'connecting') {
+          syncDot.className = 'w-2 h-2 rounded-full bg-sky-500 animate-pulse';
+          syncText.innerText = message || 'Conectando Nube...';
+          syncBadge.className = 'flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-300';
+        }
+      }
+    }
+
+    function cleanPayload(obj) {
+      if (obj === undefined) return null;
+      return JSON.parse(JSON.stringify(obj));
+    }
+
+    window.pushStateToCloud = async function(localState) {
+      if (!isCloudSyncReady || isReceivingFromCloud || !localState) return;
+
+      if (syncDebounceTimer) {
+        clearTimeout(syncDebounceTimer);
+      }
+
+      syncDebounceTimer = setTimeout(async () => {
+        try {
+          updateCloudStatusUI('syncing', 'Guardando...');
+          const payload = {
+            patients: localState.patients || [],
+            attendanceByDate: localState.attendanceByDate || {},
+            fixedIncomes: localState.fixedIncomes || [],
+            dailyIncomes: localState.dailyIncomes || [],
+            incomes: localState.incomes || [],
+            fixedExpenses: localState.fixedExpenses || [],
+            quickExpenses: localState.quickExpenses || [],
+            workshops: localState.workshops || [],
+            inventory: localState.inventory || [],
+            staff: localState.staff || [],
+            calendarNotes: localState.calendarNotes || [],
+            receivables: localState.receivables || [],
+            aiMessages: localState.aiMessages || [],
+            lastSaved: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            updatedByDevice: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'Teléfono Móvil' : 'Computador'
+          };
+
+          await setDoc(workspaceDocRef, cleanPayload(payload), { merge: true });
+          const timeStr = new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          updateCloudStatusUI('synced', `Nube (${timeStr})`);
+        } catch (err) {
+          console.error('Error al guardar en Firestore:', err);
+          updateCloudStatusUI('error', 'Reintentando...');
+        }
+      }, 250);
+    };
+
+    async function startRealtimeSync() {
+      updateCloudStatusUI('connecting');
+      try {
+        const initialSnap = await getDoc(workspaceDocRef);
+        if (initialSnap.exists()) {
+          const cloudData = initialSnap.data();
+          if (window.appState && cloudData) {
+            isReceivingFromCloud = true;
+            if (Array.isArray(cloudData.patients) && cloudData.patients.length > 0) window.appState.patients = cloudData.patients;
+            if (cloudData.attendanceByDate && typeof cloudData.attendanceByDate === 'object') window.appState.attendanceByDate = cloudData.attendanceByDate;
+            if (Array.isArray(cloudData.dailyIncomes)) window.appState.dailyIncomes = cloudData.dailyIncomes;
+            if (Array.isArray(cloudData.fixedIncomes)) window.appState.fixedIncomes = cloudData.fixedIncomes;
+            if (Array.isArray(cloudData.incomes)) window.appState.incomes = cloudData.incomes;
+            if (Array.isArray(cloudData.fixedExpenses)) window.appState.fixedExpenses = cloudData.fixedExpenses;
+            if (Array.isArray(cloudData.quickExpenses)) window.appState.quickExpenses = cloudData.quickExpenses;
+            if (Array.isArray(cloudData.workshops)) window.appState.workshops = cloudData.workshops;
+            if (Array.isArray(cloudData.inventory)) window.appState.inventory = cloudData.inventory;
+            if (Array.isArray(cloudData.staff)) window.appState.staff = cloudData.staff;
+            if (Array.isArray(cloudData.calendarNotes)) window.appState.calendarNotes = cloudData.calendarNotes;
+            if (Array.isArray(cloudData.receivables)) window.appState.receivables = cloudData.receivables;
+
+            try {
+              localStorage.setItem('VITALIA_ERP_MASTER_DB_V1', JSON.stringify(window.appState));
+            } catch (_) {}
+
+            if (typeof window.renderActiveView === 'function') {
+              window.renderActiveView();
+            }
+            isReceivingFromCloud = false;
+          }
+        } else {
+          if (window.appState) {
+            const payload = {
+              patients: window.appState.patients || [],
+              attendanceByDate: window.appState.attendanceByDate || {},
+              fixedIncomes: window.appState.fixedIncomes || [],
+              dailyIncomes: window.appState.dailyIncomes || [],
+              incomes: window.appState.incomes || [],
+              fixedExpenses: window.appState.fixedExpenses || [],
+              quickExpenses: window.appState.quickExpenses || [],
+              workshops: window.appState.workshops || [],
+              inventory: window.appState.inventory || [],
+              staff: window.appState.staff || [],
+              calendarNotes: window.appState.calendarNotes || [],
+              receivables: window.appState.receivables || [],
+              lastSaved: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+              updatedByDevice: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'Teléfono Móvil' : 'Computador'
+            };
+            await setDoc(workspaceDocRef, cleanPayload(payload));
+          }
+        }
+
+        isCloudSyncReady = true;
+        const timeStr = new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+        updateCloudStatusUI('synced', `En la Nube (${timeStr})`);
+
+        // Escucha en tiempo real de cambios desde cualquier teléfono, PC o usuario
+        onSnapshot(workspaceDocRef, (snapshot) => {
+          if (!snapshot.exists()) return;
+          if (snapshot.metadata.hasPendingWrites) return;
+
+          const data = snapshot.data();
+          if (!window.appState || !data) return;
+
+          isReceivingFromCloud = true;
+          try {
+            if (Array.isArray(data.patients)) window.appState.patients = data.patients;
+            if (data.attendanceByDate) window.appState.attendanceByDate = data.attendanceByDate;
+            if (Array.isArray(data.dailyIncomes)) window.appState.dailyIncomes = data.dailyIncomes;
+            if (Array.isArray(data.fixedIncomes)) window.appState.fixedIncomes = data.fixedIncomes;
+            if (Array.isArray(data.incomes)) window.appState.incomes = data.incomes;
+            if (Array.isArray(data.fixedExpenses)) window.appState.fixedExpenses = data.fixedExpenses;
+            if (Array.isArray(data.quickExpenses)) window.appState.quickExpenses = data.quickExpenses;
+            if (Array.isArray(data.workshops)) window.appState.workshops = data.workshops;
+            if (Array.isArray(data.inventory)) window.appState.inventory = data.inventory;
+            if (Array.isArray(data.staff)) window.appState.staff = data.staff;
+            if (Array.isArray(data.calendarNotes)) window.appState.calendarNotes = data.calendarNotes;
+            if (Array.isArray(data.receivables)) window.appState.receivables = data.receivables;
+
+            localStorage.setItem('VITALIA_ERP_MASTER_DB_V1', JSON.stringify(window.appState));
+
+            if (typeof window.renderActiveView === 'function') {
+              window.renderActiveView();
+            }
+
+            const sender = data.updatedByDevice || 'otro dispositivo';
+            const now = new Date();
+            const nowStr = now.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            updateCloudStatusUI('synced', `Sincronizado (${nowStr})`);
+
+            if (typeof window.showToast === 'function') {
+              window.showToast(`Sincronizado en tiempo real desde ${sender}`, 'info');
+            }
+          } catch (err) {
+            console.error('Error procesando actualización de la nube:', err);
+          } finally {
+            isReceivingFromCloud = false;
+          }
+        }, (error) => {
+          console.error('Error en listener de Firestore:', error);
+          updateCloudStatusUI('error', 'Error Nube');
+        });
+
+      } catch (err) {
+        console.error('Error inicializando Firestore:', err);
+        updateCloudStatusUI('error', 'Sin conexión Nube');
+      }
+    }
+
+    startRealtimeSync();
+  </script>
 </body>
 </html>

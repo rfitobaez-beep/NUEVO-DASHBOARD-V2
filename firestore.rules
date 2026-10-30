@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Permitir lectura y escritura del espacio compartido de trabajo clínico para sincronización multi-dispositivo (teléfonos y computadores)
+    match /workspaces/{workspaceId} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "Workspace": {
+      "title": "Workspace",
+      "description": "Central shared clinical, attendance, and financial data for Vitalia OS",
+      "type": "object",
+      "properties": {
+        "patients": {
+          "type": "array",
+          "description": "List of enrolled patients and clinical records"
+        },
+        "attendanceByDate": {
+          "type": "object",
+          "description": "Attendance map by date key YYYY-MM-DD"
+        },
+        "fixedIncomes": {
+          "type": "array",
+          "description": "Recurring income entries"
+        },
+        "dailyIncomes": {
+          "type": "array",
+          "description": "Daily copay and subsidy incomes"
+        },
+        "fixedExpenses": {
+          "type": "array",
+          "description": "Operational fixed expenses"
+        },
+        "quickExpenses": {
+          "type": "array",
+          "description": "Variable daily expenses and petty cash"
+        },
+        "workshops": {
+          "type": "array",
+          "description": "Cognitive and physical rehabilitation workshops"
+        },
+        "inventory": {
+          "type": "array",
+          "description": "Pantry and clinical supplies"
+        },
+        "staff": {
+          "type": "array",
+          "description": "Caregivers, nurses, and staff"
+        },
+        "calendarNotes": {
+          "type": "array",
+          "description": "Monthly calendar notes and events"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last cloud synchronization"
+        }
+      },
+      "required": ["patients", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/workspaces/{workspaceId}": {
+      "schema": "Workspace",
+      "description": "Shared multi-device clinic state for Centro Diurno Vitalia"
+    }
+  }
+}
